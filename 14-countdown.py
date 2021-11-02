@@ -11,7 +11,7 @@ else:
     timer_seconds_left=30
 # print(timer_seconds_left)
 try:
-    while timer_seconds_left>0:
+    while True:
         # although it makes it look like that digits are being overwritten but not in reality
         print('\n'*60)
         hours=timer_seconds_left//3600
@@ -28,16 +28,21 @@ try:
         print(hours_mid,'*',minutes_mid,'*',seconds_mid)
         print(hours_bot,'*',minutes_bot,'*',seconds_bot)
         print()
-        print('Press Ctrl+C to quit.',end='',flush=True)
+        print('Press Ctrl+C to quit.')
+
+        if timer_seconds_left==0:
+            print('*** BOOM ***')
+            break
+        
         time.sleep(1)
 
         '''print('\b'*(len(hours_top+minutes_top+seconds_top)+2*2),end='',flush=True)
         print('\b'*(len(hours_mid+minutes_mid+seconds_mid)+2*2),end='',flush=True)
         print('\b'*(len(hours_bot+minutes_bot+seconds_bot)+2*2),end='',flush=True)'''
-
+        
         timer_seconds_left-=1
         
-    print('*** BOOM ***')
+    
 except:
     print(f'Countdown Stopped at {timer_seconds_left}')
     sys.exit()
