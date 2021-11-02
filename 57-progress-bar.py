@@ -19,25 +19,25 @@ def main():
         
         # since default end for print is new-line we specify end as ''
 
-        print('\b'*(len(progress_string)+1),end='',flush=True)
+        # print('\b'*(len(progress_string)+1),end='',flush=True)
         
         print(progress_string,end='',flush=True)
-        for i in range(5):
-            print('|',end='',flush=True)
-            time.sleep(0.1)
-            print('\b',end='',flush=True)
-            print('\\',end='',flush=True)
-            time.sleep(0.1)
-            print('\b',end='',flush=True)
-            print('-',end='',flush=True)
-            time.sleep(0.1)
-            print('\b',end='',flush=True)
-            print('/',end='',flush=True)
-            time.sleep(0.1)
-            print('\b',end='',flush=True)
+        # for i in range(1):
+        print('|',end='',flush=True)
+        time.sleep(0.1)
+        print('\b',end='',flush=True)
+        print('\\',end='',flush=True)
+        time.sleep(0.1)
+        print('\b',end='',flush=True)
+        print('-',end='',flush=True)
+        time.sleep(0.1)
+        print('\b',end='',flush=True)
+        print('/',end='',flush=True)
+        time.sleep(0.1)
+        print('\b',end='',flush=True)
     
         # time.sleep(0.2)
-        # print('\b'*(len(progress_string)+1),end='',flush=True) # this is an important step
+        print('\b'*(len(progress_string)+1),end='',flush=True) # this is an important step
 
     toc=time.time()
     # print('\n') 
