@@ -17,7 +17,7 @@ def main():
             change_len=random.randint(-1,1)
             left_len+=change_len
             total_len-=change_len
-            time.sleep(1)
+            time.sleep(0.1)
     except:
         sys.exit()
 
