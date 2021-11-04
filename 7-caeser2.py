@@ -21,7 +21,7 @@ def caeser_hack(message,key):
         if c in symbol_list and c.isupper():
             pos=symbol_list.index(c)
             pos=pos+key
-            if pos>len(symbol_list): # might happen in encryption
+            if pos>=len(symbol_list): # might happen in encryption
                 pos=pos-len(symbol_list)
             if pos<0:# might happen in decryption
                 pos=pos+len(symbol_list)

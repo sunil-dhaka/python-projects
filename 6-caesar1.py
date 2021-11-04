@@ -25,11 +25,11 @@ encrypted into C, the letter B encrypted into D, and so on.
             print('Please enter the letter e or d.')
 
         while True:
-            print('Please enter the key (0 to 25) to use.')
+            print(f'Please enter the key (0 to {len(SYMBOLES)}) to use.')
             key=input('> ')
 
             if key.isnumeric():
-                if int(key)<26 and int(key)>-1:
+                if int(key)<len(SYMBOLES) and int(key)>-1:
                     break
 
         if ed_input=='e':
@@ -50,7 +50,7 @@ def encrypt_decrypt(message,key):
         if c in symbol_list:
             pos=symbol_list.index(c)
             pos=pos+key
-            if pos>len(symbol_list): # might happen in encryption
+            if pos>=len(symbol_list): # might happen in encryption
                 pos=pos-len(symbol_list)
             if pos<0:# might happen in decryption
                 pos=pos+len(symbol_list)
