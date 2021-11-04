@@ -62,9 +62,9 @@ def get_calender(year,month):
         cal_line+='+----------+----------+----------+----------+----------+----------+----------+\n'
 
         for j in range(7):
-            day=curr_date.day
+            day=str(curr_date.day)
             curr_date+=datetime.timedelta(1)
-            cal_line+='|'+' '*2+'\b'*len(str(day))+str(day)+' '*(BOX_WIDTH-2)
+            cal_line+='|'+' '*(2-len(day))+day+' '*(BOX_WIDTH-2)
         cal_line+='|\n'
         
         for k in range(3):
