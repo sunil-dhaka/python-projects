@@ -53,7 +53,7 @@ def encrypt_decrypt(message,key):
             if pos>len(symbol_list): # might happen in encryption
                 pos=pos-len(symbol_list)
             if pos<0:# might happen in decryption
-                pos=pos-len(symbol_list)
+                pos=pos+len(symbol_list)
             encrpted_text.append(symbol_list[pos])
         else:
             encrpted_text.append(c)
