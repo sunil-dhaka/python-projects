@@ -69,7 +69,7 @@ dice and asks for your bet.
         if (total%2==0 and choice=='cho') or (total%2!=0 and choice=='han'):
             print(f'''
 You {WON}! You take {round(bet_amount*ODD)} mon.
-The house collects a {HOUSE_FEE_PERCENT*bet_amount} mon fee.
+The house collects a {round(HOUSE_FEE_PERCENT*bet_amount)} mon fee.
         ''')    
             curr_money+=round(bet_amount*(ODD-HOUSE_FEE_PERCENT))
         else:
