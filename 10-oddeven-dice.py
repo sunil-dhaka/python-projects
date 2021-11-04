@@ -2,8 +2,11 @@ import random
 
 HOUSE_FEE_PERCENT=0.10
 START_MONEY=5000
+ODD=1
+
 LOST='\033[1;31mLOST\033[m'
 WON='\033[1;32mWON\033[m'
+
 # have to edit appropriately
 # useful link: https://blog.busuu.com/japanese-numbers/
 NO_OF_DICE_FACES=6
@@ -65,13 +68,13 @@ dice and asks for your bet.
 
         if (total%2==0 and choice=='cho') or (total%2!=0 and choice=='han'):
             print(f'''
-You {WON}! You take {bet_amount} mon.
+You {WON}! You take {round(bet_amount*ODD)} mon.
 The house collects a {HOUSE_FEE_PERCENT*bet_amount} mon fee.
         ''')    
-            curr_money+=int(bet_amount*(1-HOUSE_FEE_PERCENT))
+            curr_money+=round(bet_amount*(ODD-HOUSE_FEE_PERCENT))
         else:
             print(f'You {LOST}!')
-            curr_money-=bet_amount
+            curr_money-=round(bet_amount*ODD)
 
         if curr_money==0:
             print(f'You {LOST} all youe money. Too bad.')
